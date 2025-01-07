@@ -92,7 +92,7 @@ The company needs to select the best employees for a new tech project. The proje
 
 The goal is to use the dplyr package to filter and rank employees based on the given criteria.
 
-## Steps for the Exercise
+## Steps for the Exercise.
 
 Step1: Load and Inspect the Dataset
 
