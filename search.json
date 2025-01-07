@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Manipulation with the R package dplyr",
+    "section": "",
+    "text": "R, one of the most popular programming languages for statistical analysis and data science, offers powerful tools for handling data—among them, the dplyr package stands out for its simplicity and versatility.\nData Manipulation with dplyr in R involves transforming and analyzing data efficiently using a set of functions designed for data wrangling. dplyr is part of the tidyverse package and provides a coherent grammar for data manipulation, which helps streamline common data operations."
+  },
+  {
+    "objectID": "index.html#installation-of-dplyr-package",
+    "href": "index.html#installation-of-dplyr-package",
+    "title": "Data Manipulation with the R package dplyr",
+    "section": "Installation of dplyr package",
+    "text": "Installation of dplyr package\nOpen your R studio and in the Console just write this code. R will automatically install the package.\ninstall.packages(\"dplyr\")\nScenario\nThe company needs to select the best employees for a new tech project. The project requires:\n\nRelevant roles: Software Engineers, Data Scientists, DevOps Engineers, or Front-End Developers.\nYears of experience: At least 5 years.\nKey skills: Python, AWS, or JavaScript.\n\nThe goal is to use the dplyr package to filter and rank employees based on the given criteria."
+  },
+  {
+    "objectID": "index.html#steps-for-the-exercise.",
+    "href": "index.html#steps-for-the-exercise.",
+    "title": "Data Manipulation with the R package dplyr",
+    "section": "Steps for the Exercise.",
+    "text": "Steps for the Exercise.\nStep1: Load and Inspect the Dataset\nStart by loading the dataset into R\n# Create the dataset\nemployee_data &lt;- data.frame(\n  Name = c(\"Alice Johnson\", \"Bob Smith\", \"Charlie Brown\", \"Dana White\", \"Eve Jackson\",\n           \"Frank Green\", \"Grace Lee\", \"Henry Wilson\", \"Ian Black\", \"Jane Doe\"),\n  Role = c(\"Software Engineer\", \"Data Scientist\", \"Project Manager\", \"UX Designer\",\n           \"DevOps Engineer\", \"Business Analyst\", \"Front-End Developer\", \n           \"Cybersecurity Analyst\", \"Product Manager\", \"Marketing Specialist\"),\n  Years_of_Experience = c(5, 7, 10, 4, 6, 8, 3, 9, 12, 5),\n  Skill_Sets = c(\"Python, Java, SQL\", \"R, Python, Machine Learning\", \"Agile, Scrum, Leadership\", \n                 \"Figma, Sketch, User Research\", \"AWS, Docker, Kubernetes\", \"Excel, SQL, Power BI\", \n                 \"HTML, CSS, JavaScript, React\", \"Network Security, Ethical Hacking\", \n                 \"Product Strategy, Market Analysis\", \"SEO, Content Marketing, Analytics\"),\n  Age = c(28, 32, 40, 27, 30, 35, 25, 36, 38, 29)\n)\n\n# View the data\nhead(employee_data)\nStep 2: Filter Employees Based on Role and Experience\nUse filter() to select employees with the relevant roles and at least 5 years of experience.\n# Filter relevant roles and experience\nfiltered_employees &lt;- employee_data %&gt;%\n  filter(Role %in% c(\"Software Engineer\", \"Data Scientist\", \"DevOps Engineer\", \"Front-End Developer\") &\n         Years_of_Experience &gt;= 5)\n\nfiltered_employees\nStep 3: Check for Key Skills\nNext,filter employees who have the required skills: Python, AWS, or JavaScript.\n# Filter employees with key skills\nbest_candidates &lt;- filtered_employees %&gt;%\n  filter(grepl(\"Python|AWS|JavaScript\", Skill_Sets))\n\nbest_candidates\nStep 4: Rank Candidates by Experience\nUse arrange() to rank the candidates by their years of experience in descending order.\n# Rank candidates by experience\nranked_candidates &lt;- best_candidates %&gt;%\n  arrange(desc(Years_of_Experience))\n\nranked_candidates\nStep 5: Select Key Information\nUse select() to display only the most relevant columns for decision-making.\nCopy code\n# Select relevant columns\nfinal_selection &lt;- ranked_candidates %&gt;%\n  select(Name, Role, Years_of_Experience, Skill_Sets)\n\nfinal_selection"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
